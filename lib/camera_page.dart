@@ -7,6 +7,7 @@ import 'package:tflite/tflite.dart';
 import 'package:provider/provider.dart';
 import 'main.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class CameraPage extends StatefulWidget {
   final List<CameraDescription>? cameras;
@@ -19,6 +20,9 @@ class CameraPage extends StatefulWidget {
 
 class _CameraPageState extends State<CameraPage> {
   late CameraController controller;
+
+  static AudioCache player = new AudioCache();
+
   XFile? pictureFile;
   bool pic_exist = false;
   late PageController _pageController;
@@ -33,6 +37,8 @@ class _CameraPageState extends State<CameraPage> {
     controller = CameraController(
       widget.cameras![0],
       ResolutionPreset.max,
+
+
     );
     controller.initialize().then((_) {
       if (!mounted) {
@@ -56,7 +62,10 @@ class _CameraPageState extends State<CameraPage> {
       // 모델 불러옴
       setState(() {});
     });
+
+
   }
+
 
   // 모델과 label.txt를 가져온다.
   // void loadModel() async {
@@ -148,6 +157,7 @@ class _CameraPageState extends State<CameraPage> {
     });
   }
 
+
   // 페이지 종료시 카메라, 모델 close
   @override
   void dispose() {
@@ -197,7 +207,7 @@ class _CameraPageState extends State<CameraPage> {
           //추가하고 body를 SingleChildScrollView로 감싼다.
           appBar: AppBar(
               title: Text(
-                '라벨이 나오도록 찍어주세요',
+                '라벨이 나오도록 찍어주세요1',
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
               centerTitle: true,
@@ -266,6 +276,7 @@ class _CameraPageState extends State<CameraPage> {
                                     camera_btn = false;
                                   });
 
+
                                   if (pic_exist) {
                                     if (context
                                             .read<ListBundle>()
@@ -290,6 +301,9 @@ class _CameraPageState extends State<CameraPage> {
                                     classifyImage(
                                         File(pictureFile!.path)); // 이미지 분류
                                   }
+                                  //player.play('camera_sound.mp3', mode: PlayerMode.LOW_LATENCY); // 카메라 셔터 사운드
+                                  player.play('camera_sound_02.mp3', mode: PlayerMode.MEDIA_PLAYER); // 카메라 셔터 사운드
+
                                   var pList_len = context
                                       .read<ListBundle>()
                                       .pictureList

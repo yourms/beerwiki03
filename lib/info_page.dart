@@ -42,17 +42,29 @@ class _InfoPageState extends State<InfoPage> {
                   child: Column(
                 children: [
                   Text(''),
+                  Padding(
+                    // 갤러리에 저장, 체크박스, 사진버튼 을 한 Row에
+                    padding: const EdgeInsets.all(10),
+                    child:
                   Text(
                     ' BeerWiki는 멀티캠퍼스 AI 6차 교육과정의\n 두번째 프로젝트인 머신러닝 프로젝트로\n 개발된 App입니다. \n BeerWiki는 카메라에 찍힌 맥주이미지를\n 딥러닝(CNN)을 사용하여 웹상의 리뷰를\n 크롤링, Word Cloud 형식으로 보여주는\n 맥주정보 App입니다.',
                     style: TextStyle(color: Colors.white, fontSize: 20),
-                  ),
+                  ),),
                   Text(''),
                   Text(''),
+                  Padding(
+                    // 갤러리에 저장, 체크박스, 사진버튼 을 한 Row에
+                    padding: const EdgeInsets.all(0),
+                    child :
                   Text(
                     '만든사람',
                     style: TextStyle(color: Colors.white, fontSize: 25),
-                  ),
+                  ),),
                   Text(''),
+                  Padding(
+                    // 갤러리에 저장, 체크박스, 사진버튼 을 한 Row에
+                      padding: const EdgeInsets.all(0),
+                      child:
                   DataTable(
                     columns: [
                       DataColumn(
@@ -108,7 +120,7 @@ class _InfoPageState extends State<InfoPage> {
                                 TextStyle(color: Colors.white, fontSize: 14))),
                       ]),
                     ],
-                  ),
+                  ),),
                 ],
               )),
             )));
