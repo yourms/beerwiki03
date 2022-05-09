@@ -94,11 +94,16 @@ class _CarouselState extends State<Carousel> {
                             style:
                                 TextStyle(color: Colors.white, fontSize: 20),
                           ),
+                            Text(''),
 
                             SizedBox(
                                 height: 300,
                                 width: 300,
                                 child: Image.asset('assets/wc_image/${context.read<ListBundle>().label_list[activePage]}.png')),
+                            Text(''),
+                            Text(''),
+                            Text(''),
+                            Text(''),
                         ]))
                       :
                     const Text(

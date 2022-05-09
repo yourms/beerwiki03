@@ -78,7 +78,8 @@ class _CameraPageState extends State<CameraPage> {
       // Tflite 객체에 모델 장착
       //model: "assets/mobilenet_imagenet_model.tflite",
       //model: "assets/beer_model_kor_beer_bigsize_01.tflite",
-      model: "assets/beer_model_220504_kor_label.tflite",
+      //model: "assets/beer_model_220504_kor_label.tflite",
+      model: "assets/beer_model_220509_label_300_300.tflite",
       //model: "assets/beer_model_220508_label.tflite",
       //model: "assets/beer_model_220508_label_244_400.tflite",
       //model: "assets/beer_model_220508_label_244_350.tflite",
@@ -207,7 +208,7 @@ class _CameraPageState extends State<CameraPage> {
           //추가하고 body를 SingleChildScrollView로 감싼다.
           appBar: AppBar(
               title: Text(
-                '라벨이 나오도록 찍어주세요1',
+                '라벨이 나오도록 찍어주세요',
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
               centerTitle: true,
@@ -407,6 +408,10 @@ class _CameraPageState extends State<CameraPage> {
                                   width: 300,
                                   child: Image.asset(
                                       'assets/wc_image/${context.read<ListBundle>().label_list[activePage]}.png')),
+                                Text(''),
+                                Text(''),
+                                Text(''),
+                                Text(''),
                             ]))
                           : Text(
                               ' 라벨 : 로딩중.... \n 정확도 : 로딩중.... ',

@@ -30,7 +30,7 @@ class HomePage extends StatelessWidget {
                         // 'Beer Wiki' 텍스트
                         padding: const EdgeInsets.all(30),
                         child: const Text(
-                          'Beer Wiki3',
+                          'Beer Wiki',
                           textAlign: TextAlign.center,
                           style: TextStyle(color: Colors.white, fontSize: 50),
                         ),
